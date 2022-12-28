@@ -1,14 +1,14 @@
 import { createContext } from 'react';
 
 export interface ZybarState {
-  width: number | string;
-  collapsedWidth: number | string;
-  collapsed: boolean;
+  width?: number | string;
+  collapsedWidth?: number | string;
+  collapsed?: boolean;
 }
 
-export interface ZybarContextProps extends Partial<ZybarState> {
+export interface ZybarContextProps extends ZybarState {
   updateZybarState: (values: ZybarState) => void;
-  updateCollapsedState: () => void;
+  updateCollapseState: () => void;
 }
 
 export const zybarContext = createContext<ZybarContextProps | undefined>(undefined);
